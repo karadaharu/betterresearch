@@ -10,7 +10,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def search(request):
-    template = loader.get_template('reviewshare/search.html')
-    context = {}
     print(request.GET.get('doi', 'default'));
-    return HttpResponse(template.render(context, request))
+    return render(request,'reviewshare/search.html', {
+        'doi' : request.GET.get('doi', '')
+    })

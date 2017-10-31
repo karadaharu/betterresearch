@@ -12,5 +12,5 @@ def index(request):
 def search(request):
     print(request.GET.get('doi', 'default'));
     return render(request,'reviewshare/search.html', {
-        'doi' : request.GET.get('doi', '')
+        'doi' : request.GET.get('doi', ''),
     })

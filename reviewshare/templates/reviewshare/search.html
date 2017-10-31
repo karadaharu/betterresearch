@@ -21,7 +21,16 @@
         </div><!-- s2 -->
       </div><!-- row -->
     </form>
-  </div>
+  </div><!-- row -->
+  <div class="row">
+    <div class="col s8 offset-2">
+    {% if result %}
+    {% elif doi == "" %}
+      上の検索フォームにDOIを入力してください。
+    {% else %}
+    {% endif %}
+    </div><!-- s8 -->
+  </div><!-- row -->
 </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

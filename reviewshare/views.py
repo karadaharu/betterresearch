@@ -14,3 +14,7 @@ def search(request):
     return render(request,'reviewshare/search.html', {
         'doi' : request.GET.get('doi', ''),
     })
+
+def new(request):
+    return render(request,'reviewshare/new.html')
+

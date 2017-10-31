@@ -8,3 +8,8 @@ def index(request):
     template = loader.get_template('reviewshare/index.html')
     context = {}
     return HttpResponse(template.render(context, request))
+
+def search(request):
+    template = loader.get_template('reviewshare/search.html')
+    context = {}
+    return HttpResponse(template.render(context, request))

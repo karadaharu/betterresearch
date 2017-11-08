@@ -13,14 +13,14 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" id="doi" value={{ doi }} >
+          <input type="text" id="doi" value={{ doi }} name="doi">
           <label for="doi">DOI</label>
         </div><!-- input-field -->
       </div><!-- for each input row -->
 
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="レビュー資料のURLを入力してください" type="text" id="url">
+          <input placeholder="レビュー資料のURLを入力してください" type="text" id="url" name="url">
           <label for="doi">レビュー資料のURL</label>
         </div><!-- input-field -->
       </div><!-- for each input row -->
@@ -32,6 +32,7 @@
           </button>
         </div>
       </div><!-- for each input row -->
+
       {% csrf_token %}
     </form>
   </div><!-- row -->

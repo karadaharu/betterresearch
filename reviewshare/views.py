@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from django.template import loader
+from .models import Paper, Review
 
 def index(request):
     template = loader.get_template('reviewshare/index.html')
@@ -21,5 +22,11 @@ def new(request):
     })
 
 def create(request):
+    doi = request.POST.get('doi', '')
+    if doi != '':
+        print('save')
+        paper = Paper(doi=doi)
+        paper.save()
+    else:
+        print(request.POST)
     return render(request,'reviewshare/create.html')
-

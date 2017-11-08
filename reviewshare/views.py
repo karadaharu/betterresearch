@@ -16,5 +16,10 @@ def search(request):
     })
 
 def new(request):
-    return render(request,'reviewshare/new.html')
+    return render(request,'reviewshare/new.html', {
+        'doi' : request.GET.get('doi', ''),
+    })
+
+def create(request):
+    return render(request,'reviewshare/create.html')
 

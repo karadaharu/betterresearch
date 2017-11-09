@@ -4,22 +4,27 @@
 <div class="container">
   <div class="row">
     <form action="{% url 'search' %}" method="get">
-    <div class="col s8 offset-s2">
+    <div class="col s12 offset-s1">
       <div class="row">
-        <div class="input-field col s10">
+        <div class="input-field col s8">
           <input type="text" id="doi" name="doi" value="{{ doi }}">
           <label for="doi"></label>
         </div><!-- s10 -->
-        <div class="input-field col s2">
+        <div class="input-field col s1">
           <button class="btn waves-effect waves-light" type="submit">
             <i class="material-icons">search</i>
           </button>
         </div><!-- s2 -->
+        <div class="input-field col s3 right-align">
+          <button class="btn waves-effect waves-light" type="submit">
+            ログイン
+          </button>
+        </div>
       </div><!-- row -->
     </div>
   </div><!-- row -->
   <div class="row">
-    <div class="col s8 offset-s2">
+    <div class="col s8 offset-s1">
       {% if doi == "" %}
         上の検索フォームにDOIを入力してください。
       {% else %}

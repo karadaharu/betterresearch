@@ -1,9 +1,8 @@
 {% extends "reviewshare/base.html" %}
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <form action="{% url 'search' %}" method="get">
+<div class="row">
+  <form action="{% url 'search' %}" method="get">
     <div class="col s12 offset-s1">
       <div class="row">
         <div class="input-field col s8">
@@ -22,29 +21,28 @@
         </div>
       </div><!-- row -->
     </div>
-  </div><!-- row -->
-  <div class="row">
-    <div class="col s8 offset-s1">
-      {% if doi == "" %}
-        上の検索フォームにDOIを入力してください。
-      {% else %}
-        {% if reviews is None %}
-          {{ doi }} はまだ登録されていません。新たに登録しますか？
-        {% endif %}
-        <button class="btn waves-effect waves-light" type="submit" formaction="{% url 'new' %}">
-          <i class="material-icons left">create</i>新規登録
-        </button>
-        {% if reviews %}
-        <div class="collection">
-          {% for rev in reviews %}
-          <a href="{{ rev.url }}" class="collection-item" target="_blank">{{ rev.url }}</a>
-          {% endfor %}
-        </div><!--collection-->
-        {% endif %}
-        {% endif %}
-    </div><!-- s8 -->
-    </form>
-  </div><!-- row -->
-</div>
+</div><!-- row -->
+<div class="row">
+  <div class="col s8 offset-s1">
+    {% if doi == "" %}
+    上の検索フォームにDOIを入力してください。
+    {% else %}
+    {% if reviews is None %}
+    {{ doi }} はまだ登録されていません。新たに登録しますか？
+    {% endif %}
+    <button class="btn waves-effect waves-light" type="submit" formaction="{% url 'new' %}">
+      <i class="material-icons left">create</i>新規登録
+    </button>
+    {% if reviews %}
+    <div class="collection">
+      {% for rev in reviews %}
+      <a href="{{ rev.url }}" class="collection-item" target="_blank">{{ rev.url }}</a>
+      {% endfor %}
+    </div><!--collection-->
+    {% endif %}
+    {% endif %}
+  </div><!-- s8 -->
+  </form>
+</div><!-- row -->
 
 {% endblock %}

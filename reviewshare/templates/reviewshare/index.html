@@ -1,27 +1,25 @@
 {% extends "reviewshare/base.html" %}
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col s6 offset-s3">
-      <h1 class="center-align">ReviewShare</h1>
-    </div>
+<div class="row">
+  <div class="col s6 offset-s3">
+    <h1 class="center-align">ReviewShare</h1>
   </div>
-  <div class="row">
-    <form class="col s8 offset-s2" action="{% url 'search' %}" method="get">
-      <div class="row">
-        <div class="input-field col s10">
-          <input type="text" id="doi" name="doi" placeholder="論文のDOIを入力してください。例) 10.1016/j.jtbi.2007.07.028">
-          <label for="doi"></label>
-        </div><!-- s10 -->
-        <div class="input-field col s2">
-          <button class="btn waves-effect waves-light" type="submit">
-            <i class="material-icons">search</i>
-          </button>
-        </div><!-- s2 -->
-      </div><!-- row -->
-    </form>
-  </div>
+</div>
+<div class="row">
+  <form class="col s8 offset-s2" action="{% url 'search' %}" method="get">
+    <div class="row">
+      <div class="input-field col s10">
+        <input type="text" id="doi" name="doi" placeholder="論文のDOIを入力してください。例) 10.1016/j.jtbi.2007.07.028">
+        <label for="doi"></label>
+      </div><!-- s10 -->
+      <div class="input-field col s2">
+        <button class="btn waves-effect waves-light" type="submit">
+          <i class="material-icons">search</i>
+        </button>
+      </div><!-- s2 -->
+    </div><!-- row -->
+  </form>
 </div>
 
 {% endblock %}
